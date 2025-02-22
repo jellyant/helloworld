@@ -17,5 +17,7 @@ module tt_um_led_jellyant (
 
     // List all unused inputs to prevent warnings
     wire _unused = &{ena, clk, rst_n, 1'b0};
+    wire A;
+    assign A=ui_in[0];
 
 endmodule

@@ -11,7 +11,7 @@ module tt_um_led_jellyant (
 );
 
     // All output pins must be assigned. If not used, assign to 0.
-    assign uo_out[7:1]  = ui_in + uio_in;  // Example: ou_out is the sum of ui_in and uio_in
+    assign uo_out[7:1]  = ui_in[7:1] + uio_in[7:1];  // Example: ou_out is the sum of ui_in and uio_in
     assign uio_out = 0;
     assign uio_oe  = 0;
 

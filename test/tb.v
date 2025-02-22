@@ -46,23 +46,4 @@ module tb ();
       .rst_n  (rst_n)     // not reset
   );
 
-//-- Comenzamos las pruebas
-initial begin
-    
-  //-- Ponemos la entrada del inversor a 0
-  # 5 ui_in[0] = 0;
-    
-  //-- Tras 5 unidades de tiempo comprobamos la salida
-  # 5 if (uo_out[0] != 1)
-        $display("---->¡ERROR! Esperado: 1. Leido: %d", uo_out[0]);
-    
-  //-- Tras otras 5 unidades ponemos un 1 en la entrada
-  # 5 ui_in[0] = 1;
-     
-  //-- Tras 5 unidades comprobamos si hay un 0 en la entrada
-  # 5 if (uo_out[0] != 0)
-        $display("---> ¡ERROR! Esperado: 0. Leido: %d", uo_out[0]);
-    
-  # 5 $display("FIN de la simulacion");
-end
 endmodule

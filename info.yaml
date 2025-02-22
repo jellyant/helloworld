@@ -1,7 +1,7 @@
 # Tiny Tapeout project information
 project:
-  title:        "led test"      # Project title
-  author:       ""      # Your name
+  title:        "ledtest"      # Project title
+  author:       "jellyant"      # Your name
   discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
   description:  "Turns one output ON."      # One line description of what your project does
   language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc

@@ -21,6 +21,6 @@ module tt_um_led_jellyant (
     wire B;
     assign A = ui_in[0];
     assign B = ~A;
-    assign ui_out[0] = B;
+    assign uo_out[0] = B;
 
 endmodule

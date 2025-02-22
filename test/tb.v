@@ -64,6 +64,5 @@ initial begin
         $display("---> ¡ERROR! Esperado: 0. Leido: %d", uo_out[0]);
     
   # 5 $display("FIN de la simulacion");
-  # 10 $finish;
 end
 endmodule

@@ -28,6 +28,6 @@ module tt_um_led_jellyant (
     //-- Incrementar el registro
     data <= data + 1;
 
-    A = data[25]
+    assign A = data[25]
 
 endmodule

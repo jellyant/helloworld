@@ -27,7 +27,7 @@ module tt_um_led_jellyant (
     always @(posedge clk) begin
     //-- Incrementar el registro
         data <= data + 1;
-    end;
+    end
     
     assign A = data[25];
 

@@ -17,6 +17,8 @@ module tt_um_led_jellyant (
 
     // List all unused inputs to prevent warnings
     wire _unused = &{ena, rst_n, 1'b0};
+
+    wire A;
     
     //-- La salida es un registro de 26 bits, inicializado a 0
     reg [25:0] data = 0;
@@ -25,5 +27,7 @@ module tt_um_led_jellyant (
     always @(posedge clk) begin
     //-- Incrementar el registro
     data <= data + 1;
+
+    A = data[25]
 
 endmodule

@@ -26,8 +26,9 @@ module tt_um_led_jellyant (
     //-- Sensible al flanco de subida
     always @(posedge clk) begin
     //-- Incrementar el registro
-    data <= data + 1;
-
+        data <= data + 1;
+    end;
+    
     assign A = data[25];
 
 endmodule

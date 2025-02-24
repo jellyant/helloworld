@@ -30,7 +30,7 @@ async def test_project(dut):
     for _ in range(100):
         await FallingEdge(dut.clk)
         counter_check += 1
-        assert data == counter_check
+        assert dut.uo_out.value  == counter_check
         
     
     # Keep testing the module by changing the input values, waiting for

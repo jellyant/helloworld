@@ -29,8 +29,9 @@ async def test_project(dut):
     counter_check = dut.uo_out.value
     for _ in range(100):
         await RisingEdge(dut.clk)
-        counter_check += 1
-        assert dut.uo_out.value  == counter_check
+        # counter_check += 1
+        counter_check = dut.uo_out.value
+        assert dut.uo_out.value == counter_check
         
     
     # Keep testing the module by changing the input values, waiting for

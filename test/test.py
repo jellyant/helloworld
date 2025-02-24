@@ -4,7 +4,7 @@
 import cocotb
 from cocotb.clock import Clock
 from cocotb.triggers import ClockCycles
-from cocotb.triggers import FallingEdge, Timer
+from cocotb.triggers import FallingEdge, Timer, RisingEdge
 
 @cocotb.test()
 async def test_project(dut):
@@ -26,9 +26,9 @@ async def test_project(dut):
     dut._log.info("Test project behavior")
 
 
-    counter_check = 0
+    counter_check = dut.uo_out.value
     for _ in range(100):
-        await FallingEdge(dut.clk)
+        await RisingEdge(dut.clk)
         counter_check += 1
         assert dut.uo_out.value  == counter_check
         

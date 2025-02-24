@@ -25,20 +25,13 @@ async def test_project(dut):
 
     dut._log.info("Test project behavior")
 
-    # Set the input values you want to test
-    dut.ui_in[0].value = 0
-    # Wait for one clock cycle to see the output values
-    await ClockCycles(dut.clk, 1)
 
-    # The following assersion is just an example of how to check the output values.
-    # Change it to match the actual expected output of your module:
-    assert dut.uo_out[0].value == 1
-    
-    await ClockCycles(dut.clk, 1)
-    dut.ui_in[0].value = 1
-    
-    await ClockCycles(dut.clk, 1)
-    assert dut.uo_out[0].value == 0
+    counter_check = 0
+    for _ in range(100):
+        await FallingEdge(dut.clk)
+        counter_check += 1
+        assert data == counter_check
+        
     
     # Keep testing the module by changing the input values, waiting for
     # one or more clock cycles, and asserting the expected output values.

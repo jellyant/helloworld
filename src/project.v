@@ -29,6 +29,7 @@ module tt_um_led_jellyant (
         data <= data + 1;
     end
     
-    assign A = data[25];
+    assign A = data[3];
+    assign uo_out[0] = A;
 
 endmodule
